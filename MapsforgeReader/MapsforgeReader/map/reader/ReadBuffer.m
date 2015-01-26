@@ -1,3 +1,9 @@
+//
+//  Edited by Carlo Schiesaro on 26/01/2014.
+//  Copyright (c) 2014 Wami SRL. All rights reserved.
+//
+
+
 #import "ReadBuffer.h"
 #import "Deserializer.h"
 

@@ -6,6 +6,10 @@
 //  Copyright (c) 2012 __MyCompanyName__. All rights reserved.
 //
 
+//  Edited by Carlo Schiesaro on 26/01/2014.
+//  Copyright (c) 2014 Wami SRL. All rights reserved.
+//
+
 #import "RMOSPTileSource.h"
 #import "RMTile.h"
 #import "RMTileImage.h"
