@@ -32,7 +32,6 @@
 -(id) initWithMapFile:(NSString*)mapFile;
 -(id) initWithMapFileInFolder:(NSString*)resource andId:(NSInteger)cityId;
 
-+(void) initializeWithFolder:(NSString*)folder andId:(NSInteger)cityId;
 
 +(OSPRenderer*) newRendererForResource:(NSString*)resource;
 +(FMDatabase*) newCacheDataBaseForResource:(NSString*)resource;

@@ -66,7 +66,7 @@ int const MAXIMUM_BUFFER_SIZE = 2500000;
 
 - (void) seekTo:(long long)offset
 {
-    globalBufferPosition = offset;
+    globalBufferPosition = (int)offset;
     bufferPosition = 0;
 }
 

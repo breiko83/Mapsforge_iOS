@@ -13,7 +13,7 @@ extern long const serialVersionUID;// = 1L;
 - (id) initWithTag:(NSString *)tag {
   if (self = [super init]) {
     NSRange range = [tag rangeOfCharacterFromSet:[NSCharacterSet characterSetWithCharactersInString:[NSString stringWithFormat:@"%c", KEY_VALUE_SEPARATOR]]];
-	  int splitPosition = range.location;
+	  int splitPosition = (int)range.location;
     key = [tag substringToIndex: splitPosition]; //retain];
     value = [tag substringFromIndex:splitPosition + 1];// retain]; // TODO: так ли это?!
     hashCodeValue = [self calculateHashCode];
@@ -74,8 +74,8 @@ extern long const serialVersionUID;// = 1L;
  */
 - (int) calculateHashCode {
   int result = 7;
-  result = 31 * result + ((key == nil) ? 0 : [key hash]);
-  result = 31 * result + ((value == nil) ? 0 : [value hash]);
+  result = (int)(31 * result + ((key == nil) ? 0 : [key hash]));
+  result = (int)(31 * result + ((value == nil) ? 0 : [value hash]));
   return result;
 }
 

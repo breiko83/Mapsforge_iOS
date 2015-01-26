@@ -55,11 +55,11 @@ BOOL runInBackground;
 	self = [super init];
 	if (self)
 	{
-		NSString *resource = [NSString stringWithFormat:@"%@/%d.map", folder, cityId];
-		NSString *dbresource = [NSString stringWithFormat:@"%@/%dcache.sqlite3", folder, cityId];
+		NSString *resource = [NSString stringWithFormat:@"%@/%ld.map", folder, (long)cityId];
+		NSString *dbresource = [NSString stringWithFormat:@"%@/%ldcache.sqlite3", folder, (long)cityId];
 		renderer = [RMOSPTileSource newRendererForResource:resource];
 		cacheDatabase = [RMOSPTileSource newCacheDataBaseForResource:dbresource];
-		tileProjection = [[RMFractalTileProjection alloc] initFromProjection:[self projection] 
+		tileProjection = [[RMFractalTileProjection alloc] initFromProjection:[self projection]
 															  tileSideLength:kOSPDefaultTileSize 
 																	 maxZoom:kOSPDefaultMaxTileZoom 
 																	 minZoom:kOSPDefaultMinTileZoom];
@@ -217,10 +217,10 @@ BOOL runInBackground;
 	NSString *folder = [array objectAtIndex:0];
 	NSNumber *guideId = [array objectAtIndex:1];
 	CLLocation *loc = [array objectAtIndex:2];
-	[RMOSPTileSource initializeWithFolder:folder andId:[guideId intValue]];
+	//[RMOSPTileSource initializeWithFolder:folder andId:[guideId intValue]];
 
-	NSString *resource = [NSString stringWithFormat:@"%@/%d.map", folder, guideId];
-	NSString *dbresource = [NSString stringWithFormat:@"%@/%dcache.sqlite3", folder, guideId];
+	NSString *resource = [NSString stringWithFormat:@"%@/%@.map", folder, guideId];
+	NSString *dbresource = [NSString stringWithFormat:@"%@/%@cache.sqlite3", folder, guideId];
 	OSPRenderer *renderer = [RMOSPTileSource newRendererForResource:resource];
 	FMDatabase *cacheDatabase = [RMOSPTileSource newCacheDataBaseForResource:dbresource];
 	
@@ -355,7 +355,7 @@ BOOL runInBackground;
 
 - (int)tileSideLength
 {
-	return tileProjection.tileSideLength;
+	return (int)tileProjection.tileSideLength;
 }
 
 -(void) didReceiveMemoryWarning

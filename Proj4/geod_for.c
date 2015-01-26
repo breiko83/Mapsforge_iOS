@@ -1,6 +1,3 @@
-#ifndef lint
-static const char SCCSID[]="@(#)geod_for.c	4.6	95/09/23	GIE	REL";
-#endif
 # include "projects.h"
 # include "geodesic.h"
 # define MERI_TOL 1e-9
@@ -48,8 +45,7 @@ geod_pre(void) {
 	void
 geod_for(void) {
 	double d,sind,u,V,X,ds,cosds,sinds,ss,de;
-	ss = 0.;
-	
+
 	if (ellipse) {
 		d = geod_S / (D * geod_a);
 		if (signS) d = -d;
@@ -95,13 +91,14 @@ geod_for(void) {
 			(ellipse ? onef * M : M));
 		de = atan2(sinds * sina12 ,
 			(costh1 * cosds - sinth1 * sinds * cosa12));
-		if (ellipse)
+		if (ellipse) {
 			if (signS)
 				de += c1 * ((1. - c2) * ds +
 					c2 * sinds * cos(ss));
 			else
 				de -= c1 * ((1. - c2) * ds -
 					c2 * sinds * cos(ss));
+        }
 	}
 	lam2 = adjlon( lam1 + de );
 }

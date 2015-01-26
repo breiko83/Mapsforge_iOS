@@ -271,13 +271,6 @@
 			remoteGlobalIDString = 1F0E88F6130462F300537D04;
 			remoteInfo = CoreParse;
 		};
-		1FCA08F114CAE5C2008889C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FCA08E314CAE5C2008889C3 /* CoreParse.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F0E890B130462F300537D04;
-			remoteInfo = CoreParseTests;
-		};
 		1FCA08F314CAE5C2008889C3 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 1FCA08E314CAE5C2008889C3 /* CoreParse.xcodeproj */;
@@ -291,13 +284,6 @@
 			proxyType = 2;
 			remoteGlobalIDString = 1F92817F145C11050033BC34;
 			remoteInfo = iOSCoreParse;
-		};
-		1FCA08F714CAE5C2008889C3 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 1FCA08E314CAE5C2008889C3 /* CoreParse.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 1F92818C145C11050033BC34;
-			remoteInfo = iOSCoreParseTests;
 		};
 		79ED3362153C4C2D0057392A /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -629,10 +615,8 @@
 			isa = PBXGroup;
 			children = (
 				1FCA08F014CAE5C2008889C3 /* CoreParse.framework */,
-				1FCA08F214CAE5C2008889C3 /* CoreParseTests.octest */,
 				1FCA08F414CAE5C2008889C3 /* CoreParse Documentation */,
 				1FCA08F614CAE5C2008889C3 /* libCoreParse.a */,
-				1FCA08F814CAE5C2008889C3 /* CoreParseTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1013,13 +997,6 @@
 			remoteRef = 1FCA08EF14CAE5C2008889C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		1FCA08F214CAE5C2008889C3 /* CoreParseTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CoreParseTests.octest;
-			remoteRef = 1FCA08F114CAE5C2008889C3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
 		1FCA08F414CAE5C2008889C3 /* CoreParse Documentation */ = {
 			isa = PBXReferenceProxy;
 			fileType = "compiled.mach-o.executable";
@@ -1032,13 +1009,6 @@
 			fileType = archive.ar;
 			path = libCoreParse.a;
 			remoteRef = 1FCA08F514CAE5C2008889C3 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		1FCA08F814CAE5C2008889C3 /* CoreParseTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = CoreParseTests.octest;
-			remoteRef = 1FCA08F714CAE5C2008889C3 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 		79ED3363153C4C2D0057392A /* libMapsforgeReader.a */ = {
@@ -1294,7 +1264,7 @@
 					"$(inherited)",
 				);
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1304,11 +1274,12 @@
 					"../Proj.4/**",
 					"../CoreParse/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1325,7 +1296,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_VERSION = "";
 				GCC_WARN_ABOUT_MISSING_PROTOTYPES = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
@@ -1335,13 +1306,14 @@
 					"../Proj.4/**",
 					"../CoreParse/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				OTHER_LDFLAGS = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
@@ -1352,12 +1324,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenStreetPad/OpenStreetPad-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"../Shapelib/**",
 					"./Proj.4/**",
 					"../CoreParse/**",
 				);
 				INFOPLIST_FILE = "OpenStreetPad/OpenStreetPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"/usr/local/lib/**",
 					"$(inherited)",
@@ -1381,12 +1355,14 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "OpenStreetPad/OpenStreetPad-Prefix.pch";
 				GCC_THUMB_SUPPORT = NO;
+				GCC_VERSION = "";
 				HEADER_SEARCH_PATHS = (
 					"../Shapelib/**",
 					"./Proj.4/**",
 					"../CoreParse/**",
 				);
 				INFOPLIST_FILE = "OpenStreetPad/OpenStreetPad-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"/usr/local/lib/**",
 					"$(inherited)",
@@ -1451,7 +1427,7 @@
 					"../Proj.4/**",
 					"../CoreParse/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"/usr/local/lib/**",
 					"\"$(SRCROOT)\"",
@@ -1464,7 +1440,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv6 i386 x86_64 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -1482,7 +1458,7 @@
 					"../Proj.4/**",
 					"../CoreParse/**",
 				);
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LIBRARY_SEARCH_PATHS = (
 					"/usr/local/lib/**",
 					"\"$(SRCROOT)\"",
@@ -1495,7 +1471,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				VALID_ARCHS = "armv7 armv6 i386 x86_64 armv7s";
+				VALID_ARCHS = "armv7 armv7s arm64";
 			};
 			name = Release;
 		};
