@@ -1,6 +1,14 @@
 Mapsforge_iOS
 =============
 
+This is an updated fork of initial Mapsforge_iOS project created by Medved Nick (medvednick@yandex.ru).
+
+The project has been updated to compile with 64 bit environment (arm64).
+
+NOTE if you are an Apple developer: Beginning on February 1, 2015 new iOS apps submitted to the App Store must include 64-bit support and be built with the iOS 8 SDK
+
+=============
+
 This is Objective-C analog for some part of Mapsforge library for Android, which you can find there: http://code.google.com/p/mapsforge/ 
 
 MapsforgeReader allows iOS applications to read compact .map files with vector maps. There is an example, which should be working without any settings.
